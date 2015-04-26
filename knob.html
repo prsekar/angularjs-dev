@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html ng-app="Knob">
+<head>
+  <title>Hello Angular.JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.4/angular-filter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.4/angular-filter.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+  <script src="lib/jquery.knob.js"></script>
+  <script src="js/controller.js"></script>
+  
+</head>
+<body>
+  <div ng-controller="myCtrl">
+      <input type="text" dialmeter class="dial">
+      <div data-ng-init="initData()">
+          <div ng-repeat="(key,value) in (arrayOfObjects | groupBy:'team')">
+              {{ key }}
+              <div ng-repeat="object in value" >
+                  {{ object.name }} : {{ object.value }}
+
+              </div>
+          </div>
+      </div>
+</div>
+</body>
+</html>
